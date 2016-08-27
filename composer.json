@@ -1,0 +1,25 @@
+{
+	"name": "xiewulong/yii2-attachment",
+	"description": "Attachment management system",
+	"keywords": ["yii2", "xiewulong", "attachment", "upload", "image", "file"],
+	"type": "yii2-extension",
+	"license": "MIT",
+	"support": {
+		"issues": "https://github.com/xiewulong/yii2-attachment/issues",
+		"wiki": "https://github.com/xiewulong/yii2-attachment/wiki",
+		"source": "https://github.com/xiewulong/yii2-attachment"
+	},
+	"authors": [
+		{
+			"name": "xiewulong",
+			"email": "xiewulong@vip.qq.com"
+		}
+	],
+	"require": {
+		"yiisoft/yii2": "*",
+		"yiisoft/yii2-imagine": "*"
+	},
+	"autoload": {
+		"psr-4": {"yii\\attachment\\": ""}
+	}
+}

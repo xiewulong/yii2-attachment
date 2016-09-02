@@ -146,15 +146,14 @@ class UploadController extends Controller {
 			$item->type = $type;
 			$item->size = $file['size'];
 			$item->extension = $extension;
-			$item->basename = str_replace('.' . $item->extension, null, pathinfo($file['name'], PATHINFO_BASENAME));
 			$item->name = $this->module->generateName($item->client_id, $item->type);
 			$item->path = $this->module->generatePath($item->fullName);
+			$item->name = $item->basename = basename($file['name'], '.' . $item->extension);
 			if(move_uploaded_file($file['tmp_name'], $this->module->fullFilePath($item->path))) {
 				if($item->commonHandler()) {
 					return [
 						'id' => $item->client_id,
 						'name' => $item->fullName,
-						'basename' => $item->fullBasename,
 					];
 				}
 				$this->errmsg = $item->firstErrorInFirstErrors;

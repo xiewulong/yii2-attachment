@@ -7,7 +7,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\components\ActiveRecord;
 
 /**
- * Site model
+ * Attachment model
  *
  * @since 0.0.1
  * @property {integer} $id

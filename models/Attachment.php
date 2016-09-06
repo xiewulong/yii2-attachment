@@ -79,17 +79,17 @@ class Attachment extends ActiveRecord {
 				'size',
 			], 'required'],
 
-			['type', 'default', 'value' => self::TYPE_IMAGE],
+			['type', 'default', 'value' => static::TYPE_IMAGE],
 			['type', 'in', 'range' => [
-				self::TYPE_EXCEL,
-				self::TYPE_IMAGE,
-				self::TYPE_WORD,
+				static::TYPE_EXCEL,
+				static::TYPE_IMAGE,
+				static::TYPE_WORD,
 			]],
 
-			['status', 'default', 'value' => self::STATUS_ACTIVE],
+			['status', 'default', 'value' => static::STATUS_ACTIVE],
 			['status', 'in', 'range' => [
-				self::STATUS_ACTIVE,
-				self::STATUS_DELETED,
+				static::STATUS_ACTIVE,
+				static::STATUS_DELETED,
 			]],
 
 			// Query data needed
@@ -205,9 +205,9 @@ class Attachment extends ActiveRecord {
 	public function typeItems() {
 		return [
 			[
-				self::TYPE_EXCEL => \Yii::t($this->messageCategory, self::TYPE_EXCEL),
-				self::TYPE_IMAGE => \Yii::t($this->messageCategory, self::TYPE_IMAGE),
-				self::TYPE_WORD => \Yii::t($this->messageCategory, self::TYPE_WORD),
+				static::TYPE_EXCEL => \Yii::t($this->messageCategory, static::TYPE_EXCEL),
+				static::TYPE_IMAGE => \Yii::t($this->messageCategory, static::TYPE_IMAGE),
+				static::TYPE_WORD => \Yii::t($this->messageCategory, static::TYPE_WORD),
 			],
 		];
 	}
@@ -221,8 +221,8 @@ class Attachment extends ActiveRecord {
 	public function statusItems() {
 		return [
 			[
-				self::STATUS_DELETED => \Yii::t($this->messageCategory, 'Deleted'),
-				self::STATUS_ACTIVE => \Yii::t($this->messageCategory, 'Active'),
+				static::STATUS_DELETED => \Yii::t($this->messageCategory, 'Deleted'),
+				static::STATUS_ACTIVE => \Yii::t($this->messageCategory, 'Active'),
 			],
 		];
 	}
@@ -277,16 +277,16 @@ class Attachment extends ActiveRecord {
 		switch(mb_strtolower($mimeType, 'utf-8')) {
 			case 'application/vnd.ms-excel':
 			case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
-				$type = self::TYPE_EXCEL;
+				$type = static::TYPE_EXCEL;
 				break;
 			case 'image/gif':
 			case 'image/jpeg':
 			case 'image/png':
-				$type = self::TYPE_IMAGE;
+				$type = static::TYPE_IMAGE;
 				break;
 			case 'application/msword':
 			case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-				$type = self::TYPE_WORD;
+				$type = static::TYPE_WORD;
 				break;
 			default:
 				$type = null;

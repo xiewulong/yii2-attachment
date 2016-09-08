@@ -18,6 +18,8 @@
 	"require": {
 		"yiisoft/yii2": "*",
 		"yiisoft/yii2-imagine": "*",
+		"aliyuncs/oss-sdk-php": "*",
+		"qiniu/php-sdk": "*",
 		"xiewulong/yii2-components": "*",
 		"xiewulong/yii2-xui": "*"
 	},

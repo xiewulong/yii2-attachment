@@ -49,7 +49,7 @@ class LoadController extends Controller {
 			throw new NotFoundHttpException(\Yii::t($this->module->messageCategory, 'No matched data'));
 		}
 
-		return $this->redirect($this->module->fullFileUrl($item->accessed($this->module->statisticsEnable)->path));
+		return $this->redirect($this->module->fullFileUrl($item->accessed($this->module->statisticsEnable)->path, $style && $item->type == 'Image' ? $style : null));
 	}
 
 }

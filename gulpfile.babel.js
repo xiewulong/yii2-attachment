@@ -30,6 +30,7 @@ let _ns = (name, parent = ns) => (parent ? parent + ':' : '') + name;
 // 		GULP.src(CONFIG.css.src)
 // 			.pipe(PLUGINS.sourcemaps.init())
 // 			.pipe(PLUGINS.sass({outputStyle: style}).on('error', PLUGINS.sass.logError))
+// 			.pipe(PLUGINS.autoprefixer())
 // 			.pipe(PLUGINS.rename(function(path) {
 // 				if(style == 'compressed') {
 // 					path.basename += '.min';

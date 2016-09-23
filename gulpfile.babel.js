@@ -28,6 +28,7 @@ let _ns = (name, parent = ns) => (parent ? parent + ':' : '') + name;
 // GULP.task(_ns('scss'), function() {
 // 	CONFIG.css.outputStyles.forEach((style) => {
 // 		GULP.src(CONFIG.css.src)
+// 			.pipe(PLUGINS.plumber())
 // 			.pipe(PLUGINS.sourcemaps.init())
 // 			.pipe(PLUGINS.sass({outputStyle: style}).on('error', PLUGINS.sass.logError))
 // 			.pipe(PLUGINS.autoprefixer())
@@ -43,11 +44,13 @@ let _ns = (name, parent = ns) => (parent ? parent + ':' : '') + name;
 
 GULP.task(_ns('babel'), function() {
 	GULP.src(CONFIG.js.src)
+		.pipe(PLUGINS.plumber())
 		.pipe(PLUGINS.sourcemaps.init())
 		.pipe(PLUGINS.babel())
 		.pipe(PLUGINS.sourcemaps.write('.'))
 		.pipe(GULP.dest(CONFIG.js.dist));
 	GULP.src(CONFIG.js.src)
+		.pipe(PLUGINS.plumber())
 		.pipe(PLUGINS.sourcemaps.init())
 		.pipe(PLUGINS.babel())
 		.pipe(PLUGINS.uglify())

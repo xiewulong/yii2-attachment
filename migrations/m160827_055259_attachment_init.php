@@ -1,8 +1,6 @@
 <?php
 use yii\components\Migration;
 
-use yii\attachment\models\Attachment;
-
 class m160827_055259_attachment_init extends Migration {
 
 	public $messageCategory ='attachment';
@@ -26,13 +24,13 @@ class m160827_055259_attachment_init extends Migration {
 			'basename' => $this->string()->notNull()->comment(\Yii::t($this->messageCategory, 'Basename')),
 			'extension' => $this->string(68)->notNull()->comment(\Yii::t($this->messageCategory, 'Extension')),
 			'path' => $this->text()->notNull()->comment(\Yii::t($this->messageCategory, 'Path')),
-			'type' => $this->string(68)->notNull()->defaultValue(Attachment::TYPE_IMAGE)->comment(\Yii::t($this->messageCategory, 'Type')),
+			'type' => $this->string(68)->notNull()->defaultValue('Image')->comment(\Yii::t($this->messageCategory, 'Type')),
 			'size' => $this->integer()->notNull()->comment(\Yii::t($this->messageCategory, 'Size')),
-			'status' => $this->smallInteger()->notNull()->defaultValue(Attachment::STATUS_ACTIVE)->comment(\Yii::t($this->messageCategory, 'Status')),
-			'pv' => $this->integer()->notNull()->defaultValue(0)->comment(\Yii::t($this->messageCategory, 'Page view')),
-			'uv' => $this->integer()->notNull()->defaultValue(0)->comment(\Yii::t($this->messageCategory, 'Unique visitor')),
-			'operator_id' => $this->integer()->notNull()->defaultValue(0)->comment(\Yii::t($this->messageCategory, 'Operator id')),
-			'creator_id' => $this->integer()->notNull()->defaultValue(0)->comment(\Yii::t($this->messageCategory, 'Creator id')),
+			'status' => $this->boolean()->notNull()->defaultValue(1)->comment(\Yii::t($this->messageCategory, 'Status')),
+			'pv' => $this->integer()->notNull()->comment(\Yii::t($this->messageCategory, 'Page view')),
+			'uv' => $this->integer()->notNull()->comment(\Yii::t($this->messageCategory, 'Unique visitor')),
+			'operator_id' => $this->integer()->notNull()->comment(\Yii::t($this->messageCategory, 'Operator id')),
+			'creator_id' => $this->integer()->notNull()->comment(\Yii::t($this->messageCategory, 'Creator id')),
 			'created_at' => $this->integer()->notNull()->comment(\Yii::t($this->messageCategory, 'Created time')),
 			'updated_at' => $this->integer()->notNull()->comment(\Yii::t($this->messageCategory, 'Updated time')),
 		], $tableOptions);

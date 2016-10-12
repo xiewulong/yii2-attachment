@@ -58,7 +58,7 @@ class UploadController extends Controller {
 		// $this->module->min = 0;
 		// $this->module->max = $config['imageMaxSize'];
 		$name = 'upfile';
-		$response = ['state' => \Yii::t($this->module->messageCategory, 'File upload failed') . ', ' . \Yii::t($this->module->messageCategory, 'Please try again')];
+		$response = ['state' => \Yii::t($this->module->messageCategory, 'file upload failed') . ', ' . \Yii::t($this->module->messageCategory, 'please try again')];
 
 		if(isset($_FILES[$name])) {
 			$file = $_FILES[$name];
@@ -80,7 +80,7 @@ class UploadController extends Controller {
 	public function actionIndex() {
 		$name = \Yii::$app->request->post('name', null);
 		$multiple = \Yii::$app->request->post('multiple', false);
-		$response = ['error' => true, 'message' => \Yii::t($this->module->messageCategory, 'File upload failed') . ', ' . \Yii::t($this->module->messageCategory, 'Please try again')];
+		$response = ['error' => true, 'message' => \Yii::t($this->module->messageCategory, 'file upload failed') . ', ' . \Yii::t($this->module->messageCategory, 'please try again')];
 
 		if($name && $_FILES && isset($_FILES[$name])) {
 			$files = $_FILES[$name];
@@ -110,7 +110,7 @@ class UploadController extends Controller {
 				}
 			} else {
 				$response['error'] = false;
-				$response['message'] = \Yii::t($this->module->messageCategory, 'File upload successful');
+				$response['message'] = \Yii::t($this->module->messageCategory, 'file upload successful');
 			}
 			if($data) {
 				$response['data'] = $data;

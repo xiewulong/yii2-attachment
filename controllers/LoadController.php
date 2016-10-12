@@ -46,7 +46,7 @@ class LoadController extends Controller {
 		if(!$item
 			|| !(!$this->module->lockTypes || in_array($item->type, $this->module->lockTypes))
 			|| !(!$this->module->unsupportTypes || !in_array($item->type, $this->module->unsupportTypes))) {
-			throw new NotFoundHttpException(\Yii::t($this->module->messageCategory, 'No matched data'));
+			throw new NotFoundHttpException(\Yii::t($this->module->messageCategory, 'no matched data'));
 		}
 
 		return $this->redirect($this->module->fullFileUrl($item->accessed($this->module->statisticsEnable)->path, $style && $item->type == 'Image' ? $style : null));

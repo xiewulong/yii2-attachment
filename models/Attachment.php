@@ -134,21 +134,21 @@ class Attachment extends ActiveRecord {
 	 */
 	public function attributeLabels() {
 		return [
-			'id' => \Yii::t($this->messageCategory, 'Attachment id'),
-			'client_id' => \Yii::t($this->messageCategory, 'Client id'),
-			'name' => \Yii::t($this->messageCategory, 'Name'),
-			'basename' => \Yii::t($this->messageCategory, 'Basename'),
-			'extension' => \Yii::t($this->messageCategory, 'Extension'),
-			'path' => \Yii::t($this->messageCategory, 'Path'),
-			'type' => \Yii::t($this->messageCategory, 'Type'),
-			'size' => \Yii::t($this->messageCategory, 'Size'),
-			'status' => \Yii::t($this->messageCategory, 'Status'),
-			'pv' => \Yii::t($this->messageCategory, 'Page view'),
-			'uv' => \Yii::t($this->messageCategory, 'Unique Visitor'),
-			'operator_id' => \Yii::t($this->messageCategory, 'Operator id'),
-			'creator_id' => \Yii::t($this->messageCategory, 'Creator id'),
-			'created_at' => \Yii::t($this->messageCategory, 'Created time'),
-			'updated_at' => \Yii::t($this->messageCategory, 'Updated time'),
+			'id' => \Yii::t($this->messageCategory, 'attachment id'),
+			'client_id' => \Yii::t($this->messageCategory, 'client id'),
+			'name' => \Yii::t($this->messageCategory, 'name'),
+			'basename' => \Yii::t($this->messageCategory, 'basename'),
+			'extension' => \Yii::t($this->messageCategory, 'extension'),
+			'path' => \Yii::t($this->messageCategory, 'path'),
+			'type' => \Yii::t($this->messageCategory, 'type'),
+			'size' => \Yii::t($this->messageCategory, 'size'),
+			'status' => \Yii::t($this->messageCategory, 'status'),
+			'pv' => \Yii::t($this->messageCategory, 'page view'),
+			'uv' => \Yii::t($this->messageCategory, 'unique visitor'),
+			'operator_id' => \Yii::t($this->messageCategory, 'operator id'),
+			'creator_id' => \Yii::t($this->messageCategory, 'creator id'),
+			'created_at' => \Yii::t($this->messageCategory, 'created time'),
+			'updated_at' => \Yii::t($this->messageCategory, 'updated time'),
 		];
 	}
 
@@ -157,41 +157,41 @@ class Attachment extends ActiveRecord {
 	 */
 	public function attributeHints() {
 		return [
-			'id' => \Yii::t($this->messageCategory, 'Please {action} {attribute}', [
+			'id' => \Yii::t($this->messageCategory, 'please {action} {attribute}', [
 				'action' => \Yii::t($this->messageCategory, 'choose'),
-				'attribute' => \Yii::t($this->messageCategory, 'Attachment id'),
+				'attribute' => \Yii::t($this->messageCategory, 'attachment id'),
 			]),
-			'client_id' => \Yii::t($this->messageCategory, 'Please {action} {attribute}', [
-				'action' => \Yii::t($this->messageCategory, 'Generate'),
-				'attribute' => \Yii::t($this->messageCategory, 'Client id'),
+			'client_id' => \Yii::t($this->messageCategory, 'please {action} {attribute}', [
+				'action' => \Yii::t($this->messageCategory, 'generate'),
+				'attribute' => \Yii::t($this->messageCategory, 'client id'),
 			]),
-			'name' => \Yii::t($this->messageCategory, 'Please {action} {attribute}', [
-				'action' => \Yii::t($this->messageCategory, 'Enter'),
-				'attribute' => \Yii::t($this->messageCategory, 'Name'),
+			'name' => \Yii::t($this->messageCategory, 'please {action} {attribute}', [
+				'action' => \Yii::t($this->messageCategory, 'enter'),
+				'attribute' => \Yii::t($this->messageCategory, 'name'),
 			]),
-			'basename' => \Yii::t($this->messageCategory, 'Please {action} {attribute}', [
-				'action' => \Yii::t($this->messageCategory, 'Enter'),
-				'attribute' => \Yii::t($this->messageCategory, 'Basename'),
+			'basename' => \Yii::t($this->messageCategory, 'please {action} {attribute}', [
+				'action' => \Yii::t($this->messageCategory, 'enter'),
+				'attribute' => \Yii::t($this->messageCategory, 'basename'),
 			]),
-			'extension' => \Yii::t($this->messageCategory, 'Please {action} {attribute}', [
-				'action' => \Yii::t($this->messageCategory, 'Enter'),
-				'attribute' => \Yii::t($this->messageCategory, 'Extension'),
+			'extension' => \Yii::t($this->messageCategory, 'please {action} {attribute}', [
+				'action' => \Yii::t($this->messageCategory, 'enter'),
+				'attribute' => \Yii::t($this->messageCategory, 'extension'),
 			]),
-			'path' => \Yii::t($this->messageCategory, 'Please {action} {attribute}', [
-				'action' => \Yii::t($this->messageCategory, 'Enter'),
-				'attribute' => \Yii::t($this->messageCategory, 'Name'),
+			'path' => \Yii::t($this->messageCategory, 'please {action} {attribute}', [
+				'action' => \Yii::t($this->messageCategory, 'enter'),
+				'attribute' => \Yii::t($this->messageCategory, 'name'),
 			]),
-			'type' => \Yii::t($this->messageCategory, 'Please {action} {attribute}', [
-				'action' => \Yii::t($this->messageCategory, 'Enter'),
-				'attribute' => \Yii::t($this->messageCategory, 'Type'),
+			'type' => \Yii::t($this->messageCategory, 'please {action} {attribute}', [
+				'action' => \Yii::t($this->messageCategory, 'enter'),
+				'attribute' => \Yii::t($this->messageCategory, 'type'),
 			]),
 			'size' => \Yii::t($this->messageCategory, 'Please {action} {attribute}', [
-				'action' => \Yii::t($this->messageCategory, 'Enter'),
-				'attribute' => \Yii::t($this->messageCategory, 'Size'),
+				'action' => \Yii::t($this->messageCategory, 'enter'),
+				'attribute' => \Yii::t($this->messageCategory, 'size'),
 			]),
-			'status' => \Yii::t($this->messageCategory, 'Please {action} {attribute}', [
-				'action' => \Yii::t($this->messageCategory, 'Choose'),
-				'attribute' => \Yii::t($this->messageCategory, 'Status'),
+			'status' => \Yii::t($this->messageCategory, 'please {action} {attribute}', [
+				'action' => \Yii::t($this->messageCategory, 'choose'),
+				'attribute' => \Yii::t($this->messageCategory, 'status'),
 			]),
 		];
 	}
@@ -221,8 +221,8 @@ class Attachment extends ActiveRecord {
 	public function statusItems() {
 		return [
 			[
-				static::STATUS_DELETED => \Yii::t($this->messageCategory, 'Deleted'),
-				static::STATUS_ACTIVE => \Yii::t($this->messageCategory, 'Active'),
+				static::STATUS_DELETED => \Yii::t($this->messageCategory, 'deleted'),
+				static::STATUS_ACTIVE => \Yii::t($this->messageCategory, 'active'),
 			],
 		];
 	}

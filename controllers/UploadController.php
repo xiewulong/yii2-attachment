@@ -67,7 +67,7 @@ class UploadController extends Controller {
 				$response['title'] = $file['name'];
 				$response['type'] = $file['type'];
 				$response['size'] = $file['size'];
-				$response['url'] = '/' . str_replace('/upload/ueditor', null, \Yii::$app->controller->route) . '?id=' . $data->id;
+				$response['url'] = '/' . str_replace('/upload/ueditor', null, \Yii::$app->controller->route) . '?id=' . $data['id'];
 			} else if($this->errmsg) {
 				$response['state'] = \Yii::t($this->module->messageCategory, $this->errmsg);
 			}

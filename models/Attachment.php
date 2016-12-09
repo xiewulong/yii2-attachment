@@ -92,6 +92,10 @@ class Attachment extends ActiveRecord {
 				static::STATUS_DELETED,
 			]],
 
+			[['creator_id', 'operator_id'], 'filter', 'filter' => function($value) {
+				return \Yii::$app->user->isGuest ? 0 : \Yii::$app->user->identity->id;
+			}],
+
 			// Query data needed
 			[['client_id'], 'unique'],
 		];
@@ -234,16 +238,7 @@ class Attachment extends ActiveRecord {
 	 * @return {boolean}
 	 */
 	public function commonHandler() {
-		if(!$this->validate()) {
-			return false;
-		}
-
-		$this->operator_id = \Yii::$app->user->isGuest ? 0 : \Yii::$app->user->identity->id;
-		if($this->scenario == 'upload') {
-			$this->creator_id = $this->operator_id;
-		}
-
-		return $this->save(false);
+		return $this->save();
 	}
 
 	/**
